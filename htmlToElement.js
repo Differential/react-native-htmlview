@@ -20,7 +20,8 @@ function htmlToElement(rawHtml, opts, done) {
 
     return dom.map((node, index, list) => {
       if (opts.customRenderer) {
-        var rendered = opts.customRenderer(node, index, list, parent, domToElement)
+        var textStyle = opts.textStyle || {};
+        var rendered = opts.customRenderer(node, index, list, parent, domToElement, textStyle)
         if (rendered || rendered === null) return rendered
       }
 

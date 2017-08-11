@@ -55,6 +55,7 @@ class HtmlView extends Component {
       linkHandler: this.props.onLinkPress,
       styles: Object.assign({}, baseStyles, this.props.stylesheet),
       customRenderer: this.props.renderNode,
+      textStyle: this.props.textStyle,
     }
 
     htmlToElement(value, opts, (err, element) => {
@@ -82,6 +83,7 @@ HtmlView.propTypes = {
   onLinkPress: PropTypes.func,
   onError: PropTypes.func,
   renderNode: PropTypes.func,
+  textStyle: PropTypes.object,
 }
 
 HtmlView.defaultProps = {
